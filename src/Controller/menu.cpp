@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "menu.hpp"
+#include "../utilities.hpp"
 
 
 extern GLfloat rotationSpeed;
@@ -30,11 +31,7 @@ extern ShapeType currentShape;
 
 
 void initializeMenu(){
-
-
 	 //Initialize the menu
-
-
 	GLint speedMenu = glutCreateMenu(handleSpeedSubMenu);
 		glutAddMenuEntry("Increase Speed", 1);
 		glutAddMenuEntry("Decrease Speed", 2);
@@ -52,7 +49,9 @@ void initializeMenu(){
 		glutAddMenuEntry("Set Shape: Cube", 3);
 		glutAddMenuEntry("Set Shape: Pyramid", 4);
 		glutAddMenuEntry("Set Shape: Sphere", 5);
-		glutAddMenuEntry("Exit", 6);
+		glutAddMenuEntry("Load Custom Model",6);
+		glutAddMenuEntry("Save As PNG",7);
+		glutAddMenuEntry("Exit", 8);
 
 }
 
@@ -100,7 +99,14 @@ void handleMainMenu(int option) {
     case 5: // Set shape to Sphere
         currentShape = SPHERE;
         break;
-    case 6: // Exit
+
+    case 6: // load custom model
+
+    	break;
+    case 7: // save as png
+    	saveFrameAsPNG("SaveFromMenu.png");
+    	break;
+    case 8: // Exit
         exit(0);
         break;
     }
