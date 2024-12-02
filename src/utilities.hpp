@@ -20,6 +20,6 @@ using namespace std;
 void updateColorArray(GLfloat colorArray[6][3]);
 void renderText(float x, float y, const char* text);
 void saveFrameAsPNG(const char* filename);
-string generateFileName(const char* baseName);
+void generateFileName(const char* baseName, char* fullFileName, size_t maxLength);
 
 #endif /* UTILITIES_HPP_ */

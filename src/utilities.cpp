@@ -6,7 +6,6 @@
  */
 
 #include <GL/glut.h>
-
 #include "utilities.hpp"
 
 
@@ -54,25 +53,34 @@ void renderText(float x, float y, const char* text) {
 
 
 void saveFrameAsPNG(const char* filename) {
-    int width = WIN_WIDTH;
-    int height = WIN_HEIGHT;
-    unsigned char* pixels = new unsigned char[3 * width * height];
+
+    unsigned char* pixels = new unsigned char[3 * WIN_WIDTH * WIN_HEIGHT];
 
     // Read pixels from the framebuffer
-    glReadPixels(0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, pixels);
+    glReadPixels(0, 0, WIN_WIDTH, WIN_HEIGHT, GL_RGB, GL_UNSIGNED_BYTE, pixels);
 
     // Flip the image vertically
-    unsigned char* flippedPixels = new unsigned char[3 * width * height];
-    for (int y = 0; y < height; ++y) {
-        memcpy(&flippedPixels[y * width * 3], &pixels[(height - 1 - y) * width * 3], width * 3);
+    unsigned char* flippedPixels = new unsigned char[3 * WIN_WIDTH * WIN_HEIGHT];
+    for (int y = 0; y < WIN_HEIGHT; ++y) {
+        memcpy(&flippedPixels[y * WIN_WIDTH * 3], &pixels[(WIN_HEIGHT - 1 - y) * WIN_WIDTH * 3], WIN_WIDTH * 3);
     }
 
-
-
+    char fullFileName[100];
+    generateFileName(filename, fullFileName, sizeof(fullFileName));
 
     // Write the image to a PNG file
-    stbi_write_png(filename, width, height, 3, flippedPixels, width * 3);
+    stbi_write_png(fullFileName, WIN_WIDTH, WIN_HEIGHT, 3, flippedPixels, WIN_WIDTH * 3);
 
     delete[] pixels;
     delete[] flippedPixels;
+}
+
+
+void generateFileName(const char* baseName, char* fullFileName, size_t maxLength) {
+	std::time_t now = std::time(NULL);
+	std::tm* localTime = std::localtime(&now);
+	char timeBuffer[20];
+	std::strftime(timeBuffer, sizeof(timeBuffer), "%Y%m%d_%H%M%S", localTime);
+	snprintf(fullFileName, maxLength, "%s_%s" , timeBuffer,baseName);
+	renderText(20,20,"File Saved");
 }

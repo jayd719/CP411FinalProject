@@ -27,7 +27,7 @@ extern GLfloat zRotation;
 
 extern GLfloat zoom;
 
-extern GLfloat lightPosition[];
+
 
 enum ShapeType {
 	CUBE, PYRAMID, SPHERE
@@ -104,6 +104,8 @@ void onReshape(GLint newWidth, GLint newHeight) {
 			static_cast<GLfloat>(newWidth) / static_cast<GLfloat>(newHeight),
 			1.0, 25.0);
 	glMatrixMode(GL_MODELVIEW);
+	WIN_HEIGHT = newHeight;
+	WIN_WIDTH = newWidth;
 }
 void rotateShape() {
 	if (!isPaused) {
