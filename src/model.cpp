@@ -9,8 +9,6 @@
 
 #include "model.hpp"
 
-#include <GL/glut.h>
-
 extern GLfloat colorArray[6][3];
 
 void drawFace(GLfloat vertex1[], GLfloat vertex2[], GLfloat vertex3[],

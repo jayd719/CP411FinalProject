@@ -12,9 +12,11 @@
 #include <GL/glut.h>
 
 #include "config.hpp"
-#include "controller.hpp"
-#include "utilities.hpp"
 #include "view.hpp"
+#include "Controller\controller.hpp"
+#include "Controller\menu.hpp"
+#include "utilities.hpp"
+
 
 
 int main(int argc, char** argv) {
@@ -26,11 +28,17 @@ int main(int argc, char** argv) {
     // Register callback functions
     glutDisplayFunc(onDisplay);
     glutReshapeFunc(onReshape);
+
     glutIdleFunc(rotateShape);
+
     glutKeyboardFunc(handleKeyboard);
     glutSpecialFunc(handleSpecialKeys);
+
     glutMotionFunc(handleMouseMotion);
     glutMouseFunc(handleMouseScroll);
+
+    initializeMenu(); // int menu
+    glutAttachMenu(GLUT_RIGHT_BUTTON);
 
     glutMainLoop();
     return 0;

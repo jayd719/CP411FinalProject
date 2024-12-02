@@ -7,7 +7,6 @@
 
 #include <GL/glut.h>
 #include "view.hpp"
-
 #include "model.hpp"
 #include "utilities.hpp"
 

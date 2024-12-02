@@ -30,9 +30,9 @@ GLfloat colorArray[6][3];
 GLfloat rotationAngle = 0.0f, rotationSpeed = 0.15f;
 GLfloat xTranslate = 0.0f, yTranslate = 0.0f, zTranslate = -2.0f;
 GLfloat xRotation = 0.0f, yRotation = 0.0f;
-bool isPaused = false;
+bool isPaused = true;
 
-GLfloat zoom = 1.0f;
+GLfloat zoom = 1.5f;
 
 
 #endif /* CONFIG_HPP_ */

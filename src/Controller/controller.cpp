@@ -30,8 +30,10 @@ void handleKeyboard(unsigned char key, int x, int y) {
 
 void handleSpecialKeys(int key, int x, int y) {
     switch (key) {
-        case GLUT_KEY_UP: yTranslate += 0.1f; break;
-        case GLUT_KEY_DOWN: yTranslate -= 0.1f; break;
+		case GLUT_KEY_UP: yTranslate += 0.1f;break;
+		case GLUT_KEY_DOWN:yTranslate -= 0.1f;break;
+		case GLUT_KEY_LEFT: xTranslate -= 0.1f;break;
+		case GLUT_KEY_RIGHT:xTranslate += 0.1f;break;
     }
     glutPostRedisplay();
 }
