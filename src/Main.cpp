@@ -1,41 +1,39 @@
-#include "Model.h"
-#include "View.h"
-#include "Controller.h"
-#include <cstdlib>
-#include <ctime>
+//============================================================================
+// Project     : Render 3D Cube with Enhanced Controls
+// Author      : JD
+// Version     : 3.1
+// Run         : g++ 3dCube.cpp -o 3dCube -lfreeglut -lopengl32 -lglu32 (for windows)
+//               g++ 3dCube.cpp -o 3dCube -lGL -lGLU -lglut (for mac/Linux)
 
-Model model;
-View view;
-Controller controller(model, view);
+// Description : Displays a rotating 3D cube with colored faces in OpenGL.
+//               Includes lighting, keyboard controls, mouse controls, and
+//               navigation in 3D space with interaction feedback.
+//============================================================================
+#include <GL/glut.h>
 
-void displayCallback() { controller.onDisplay(); }
-void reshapeCallback(int w, int h) { controller.onReshape(w, h); }
-void idleCallback() { controller.onIdle(); }
-void keyboardCallback(unsigned char key, int x, int y) { controller.onKeyboard(key, x, y); }
-void specialKeysCallback(int key, int x, int y) { controller.onSpecialKeys(key, x, y); }
-void mouseMotionCallback(int x, int y) { controller.onMouseMotion(x, y); }
+#include "config.hpp"
+#include "controller.hpp"
+#include "utilities.hpp"
+#include "view.hpp"
 
-int main_1(int argc, char** argv) {
-    srand(static_cast<unsigned>(time(0))); // Initialize random seed
 
+int main(int argc, char** argv) {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
-    glutInitWindowSize(800, 800);
-    glutInitWindowPosition(100, 100);
-    glutCreateWindow("MVC 3D Cube");
+    initializeOpenGL();
 
-    glEnable(GL_DEPTH_TEST);
-    glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0);
-    glEnable(GL_COLOR_MATERIAL);
+    updateColorArray(colorArray);
 
-    glutDisplayFunc(displayCallback);
-    glutReshapeFunc(reshapeCallback);
-    glutIdleFunc(idleCallback);
-    glutKeyboardFunc(keyboardCallback);
-    glutSpecialFunc(specialKeysCallback);
-    glutMotionFunc(mouseMotionCallback);
+    // Register callback functions
+    glutDisplayFunc(onDisplay);
+    glutReshapeFunc(onReshape);
+    glutIdleFunc(rotateShape);
+    glutKeyboardFunc(handleKeyboard);
+    glutSpecialFunc(handleSpecialKeys);
+    glutMotionFunc(handleMouseMotion);
+    glutMouseFunc(handleMouseScroll);
 
     glutMainLoop();
     return 0;
 }
+
+
