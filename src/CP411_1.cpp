@@ -17,6 +17,7 @@
 #include <cstdio>
 
 
+
 // Global Constants and Variables
 const GLsizei WIN_WIDTH = 800, WIN_HEIGHT = 800; // Initial window size
 const char *WINDOW_TITLE = "Render 3D Objects with Enhanced Controls";
@@ -35,7 +36,8 @@ bool isPaused = false; // Animation pause state
 enum ShapeType { CUBE, PYRAMID, SPHERE };
 ShapeType currentShape = CUBE;
 // Global variable for zoom
-GLfloat zoom = 1.0f;
+GLfloat zoom = 2.0f;
+
 
 // Function Prototypes
 void initializeOpenGL();
@@ -421,3 +423,6 @@ void handleMouseScroll(int button, int dir, int x, int y) {
     }
     glutPostRedisplay(); // Refresh the display
 }
+
+
+
