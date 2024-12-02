@@ -74,6 +74,9 @@ void onDisplay() {
 		drawSphere();
 		break;
 	}
+
+	renderText(2,5,"CP");
+
 	glutSwapBuffers();
 }
 
@@ -94,4 +97,7 @@ void rotateShape() {
 		glutPostRedisplay();
 	}
 }
+
+
+
 

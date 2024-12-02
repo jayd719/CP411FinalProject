@@ -44,8 +44,12 @@ void handleMouseMotion(int x, int y) {
     glutPostRedisplay();
 }
 
+// Mouse scroll handler
 void handleMouseScroll(int button, int dir, int x, int y) {
-    if (dir > 0) zoom = std::max(0.5f, zoom - 0.05f);
-    else zoom = std::min(2.0f, zoom + 0.05f);
-    glutPostRedisplay();
+    if (button == 3) { // Scroll up
+    	zTranslate += 0.1f;
+    } else if (button == 4) { // Scroll down
+    	zTranslate -= 0.1f;
+    }
+    glutPostRedisplay(); // Refresh the display
 }

@@ -14,5 +14,4 @@ void initializeLighting();
 void onDisplay();
 void onReshape(GLint newWidth, GLint newHeight);
 void rotateShape();
-
 #endif /* VIEW_HPP_ */

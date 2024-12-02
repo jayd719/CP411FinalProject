@@ -20,7 +20,6 @@ extern GLfloat xRotation;
 extern GLfloat yRotation;
 extern GLfloat cameraX , cameraY, cameraZ;
 extern GLfloat targetX ,targetY, targetZ;
-extern GLfloat zoom;
 enum ShapeType { CUBE, PYRAMID, SPHERE };
 extern ShapeType currentShape;
 
@@ -52,6 +51,7 @@ void initializeMenu(){
 		glutAddMenuEntry("Set Shape: Pyramid", 4);
 		glutAddMenuEntry("Set Shape: Sphere", 5);
 		glutAddMenuEntry("Exit", 6);
+
 }
 
 void handleSpeedSubMenu(int option){
@@ -63,9 +63,10 @@ void handleSpeedSubMenu(int option){
 
 void handleZoomSubMenu(int option){
 	switch(option){
-		case 1: zoom += 0.1f;break;
-		case 2: zoom = std::max(0.1f, zoom - 0.1f);break;
+		case 1: zTranslate += 0.1f;break;
+		case 2: zTranslate -= 0.1f;break;
 		}
+	 glutPostRedisplay();
 }
 
 void handleMainMenu(int option) {
@@ -102,7 +103,7 @@ void handleMainMenu(int option) {
         exit(0);
         break;
     }
-    glutPostRedisplay(); // Refresh the display
+    glutPostRedisplay();
 }
 
 
