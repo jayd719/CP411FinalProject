@@ -1,7 +1,7 @@
 
 
 #include "controller.hpp"
-
+#include <cmath>
 #include<iostream>
 
 
@@ -12,7 +12,10 @@ extern GLfloat yTranslate;
 extern GLfloat zTranslate;
 extern GLfloat xRotation;
 extern GLfloat yRotation;
-extern GLfloat zoom;
+
+extern GLfloat cameraZ;
+extern GLfloat cameraY;
+extern GLfloat cameraX;
 
 void handleKeyboard(unsigned char key, int x, int y) {
     switch (key) {
@@ -23,6 +26,12 @@ void handleKeyboard(unsigned char key, int x, int y) {
         case 's': zTranslate -= 0.1f; break;
         case 'a': xTranslate -= 0.1f; break;
         case 'd': xTranslate += 0.1f; break;
+        case 'i': cameraX += 0.1f; break;
+        case 'k': cameraX -= 0.1f; break;
+        case 'j': cameraY -= 0.1f; break;
+        case 'l': cameraY += 0.1f; break;
+        case 'o': cameraZ -= 0.1f; break;
+        case 'u': cameraZ += 0.1f; break;
         case 27: exit(0); break;
     }
     glutPostRedisplay();

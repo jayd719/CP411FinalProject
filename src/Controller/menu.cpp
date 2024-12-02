@@ -18,8 +18,12 @@ extern GLfloat yTranslate;
 extern GLfloat zTranslate;
 extern GLfloat xRotation;
 extern GLfloat yRotation;
-extern GLfloat cameraX , cameraY, cameraZ;
-extern GLfloat targetX ,targetY, targetZ;
+
+extern GLfloat cameraZ;
+extern GLfloat cameraY;
+extern GLfloat cameraX;
+
+extern GLfloat zoom;
 enum ShapeType { CUBE, PYRAMID, SPHERE };
 extern ShapeType currentShape;
 
@@ -82,9 +86,7 @@ void handleMainMenu(int option) {
         cameraX = 0.0f;
         cameraY = 0.0f;
         cameraZ = 5.0f;
-        targetX = 0.0f;
-        targetY = 0.0f;
-        targetZ = 0.0f;
+        zoom = 1.5f;
         break;
     case 2: // Pause/Resume
         isPaused = !isPaused;

@@ -22,8 +22,10 @@ enum ShapeType { CUBE, PYRAMID, SPHERE };
 ShapeType currentShape = CUBE;
 
 // Camera Configuration
-GLfloat cameraX = 0.0f, cameraY = 0.0f, cameraZ = 5.0f;
-GLfloat targetX = 0.0f, targetY = 0.0f, targetZ = 0.0f;
+GLfloat cameraX = 0.0f;
+GLfloat cameraY = 0.0f;
+GLfloat cameraZ = 2.0f;
+
 
 // Global Variables
 GLfloat colorArray[6][3];
@@ -32,7 +34,7 @@ GLfloat xTranslate = 0.0f, yTranslate = 0.0f, zTranslate = -2.0f;
 GLfloat xRotation = 0.0f, yRotation = 0.0f;
 bool isPaused = true;
 
-GLfloat zoom = 1.5f;
+GLfloat zoom = 1.0f;
 
 
 #endif /* CONFIG_HPP_ */
