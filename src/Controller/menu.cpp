@@ -29,7 +29,6 @@ extern ShapeType currentShape;
 
 
 
-
 void initializeMenu(){
 
 
@@ -43,7 +42,6 @@ void initializeMenu(){
 	GLint zoomMenu = glutCreateMenu(handleZoomSubMenu);
 		glutAddMenuEntry("Zoom In", 1);
 		glutAddMenuEntry("Zoom Out", 2);
-
 
 
 	glutCreateMenu(handleMainMenu);
@@ -72,6 +70,7 @@ void handleZoomSubMenu(int option){
 		}
 	 glutPostRedisplay();
 }
+
 
 void handleMainMenu(int option) {
     switch (option) {
