@@ -1,23 +1,29 @@
 //============================================================================
 // Project     : Render 3D Cube with Enhanced Controls
 // Author      : JD
-// Version     : 3.0
+// Version     : 3.1
 // Run         : g++ 3dCube.cpp -o 3dCube -lfreeglut -lopengl32 -lglu32 (for windows)
 //               g++ 3dCube.cpp -o 3dCube -lGL -lGLU -lglut (for mac/Linux)
 
 // Description : Displays a rotating 3D cube with colored faces in OpenGL.
 //               Includes lighting, keyboard controls, mouse controls, and
-//               navigation in 3D space.
+//               navigation in 3D space with interaction feedback.
 //============================================================================
 
 #include <GL/glut.h>
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <cstdio>
 
 // Global Constants and Variables
 const GLsizei WIN_WIDTH = 800, WIN_HEIGHT = 800; // Initial window size
 const char *WINDOW_TITLE = "Render 3D Cube with Enhanced Controls";
+
+
+// Global variables for camera control
+GLfloat cameraX = 0.0f, cameraY = 0.0f, cameraZ = 5.0f; // Camera position
+GLfloat targetX = 0.0f, targetY = 0.0f, targetZ = 0.0f; // Point the camera looks
 
 GLfloat colorArray[6][3]; // Color array for each face of the cube
 GLfloat rotationAngle = 0.0f; // Initial rotation angle
@@ -38,6 +44,8 @@ void drawFace(GLfloat vertex1[], GLfloat vertex2[], GLfloat vertex3[], GLfloat v
 void handleKeyboard(unsigned char key, int x, int y);
 void handleSpecialKeys(int key, int x, int y);
 void handleMouseMotion(int x, int y);
+void renderText(float x, float y, const char* text);
+void handleMenu(int option);
 
 // Main Function
 int main(int argc, char** argv) {
@@ -74,6 +82,16 @@ void initializeOpenGL() {
 
     initializeLighting();
     srand(static_cast<unsigned>(time(0))); // Seed for random color generation
+
+    // Initialize the menu
+    glutCreateMenu(handleMenu);
+    glutAddMenuEntry("Reset", 1);
+    glutAddMenuEntry("Pause/Resume", 2);
+    glutAddMenuEntry("Increase Speed", 3);
+    glutAddMenuEntry("Decrease Speed", 4);
+    glutAddMenuEntry("Exit", 5);
+    glutAttachMenu(GLUT_RIGHT_BUTTON); // Attach menu to the right mouse button
+
 }
 
 /**
@@ -101,6 +119,36 @@ void updateColorArray(GLfloat colorArray[6][3]) {
 }
 
 /**
+ * Renders text on the screen at the specified coordinates.
+ * @param x     X-coordinate for the text.
+ * @param y     Y-coordinate for the text.
+ * @param text  Text to display.
+ */
+void renderText(float x, float y, const char* text) {
+    glDisable(GL_LIGHTING); // Disable lighting for text rendering
+    glMatrixMode(GL_PROJECTION);
+    glPushMatrix();
+    glLoadIdentity();
+    gluOrtho2D(0, WIN_WIDTH, 0, WIN_HEIGHT); // Set orthographic projection
+
+    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glLoadIdentity();
+
+    glRasterPos2f(x, y);
+    for (const char* c = text; *c != '\0'; c++) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *c);
+    }
+
+    glPopMatrix();
+    glMatrixMode(GL_PROJECTION);
+    glPopMatrix();
+    glMatrixMode(GL_MODELVIEW);
+
+    glEnable(GL_LIGHTING); // Re-enable lighting
+}
+
+/**
  * Renders the 3D scene: a rotating cube with colored faces.
  */
 void onDisplay() {
@@ -111,6 +159,13 @@ void onDisplay() {
     glRotatef(yRotation, 0, 1, 0);
     glRotatef(rotationAngle, 1, 1, 1); // Rotate the cube along the X, Y, Z axes
     drawCube();
+
+    // Render interaction feedback
+    char info[256];
+    snprintf(info, sizeof(info), "Rotation Speed: %.1f | Translation: (%.1f, %.1f, %.1f) | %s",
+             rotationSpeed, xTranslate, yTranslate, zTranslate, isPaused ? "Paused" : "Running");
+    renderText(10, WIN_HEIGHT - 20, info); // Render text at top-left corner
+
     glutSwapBuffers();
 }
 
@@ -249,4 +304,36 @@ void handleMouseMotion(int x, int y) {
     xRotation = (x % 360) - 180; // Map mouse X position to rotation
     yRotation = (y % 360) - 180; // Map mouse Y position to rotation
     glutPostRedisplay();
+}
+
+/**
+ * Menu handling function for menu options.
+ * @param option The selected menu option.
+ */
+void handleMenu(int option) {
+    switch (option) {
+        case 1: // Reset
+            xTranslate = 0.0f;
+            yTranslate = 0.0f;
+            zTranslate = -2.0f;
+            xRotation = 0.0f;
+            yRotation = 0.0f;
+            rotationAngle = 0.0f;
+            rotationSpeed = 0.5f;
+            isPaused = false;
+            break;
+        case 2: // Pause/Resume
+            isPaused = !isPaused;
+            break;
+        case 3: // Increase Speed
+            rotationSpeed += 0.1f;
+            break;
+        case 4: // Decrease Speed
+            rotationSpeed = std::max(0.1f, rotationSpeed - 0.1f); // Prevent negative speed
+            break;
+        case 5: // Exit
+            exit(0);
+            break;
+    }
+    glutPostRedisplay(); // Refresh the display
 }
