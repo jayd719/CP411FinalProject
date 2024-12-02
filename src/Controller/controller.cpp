@@ -1,6 +1,7 @@
 
 
 #include "controller.hpp"
+#include "../utilities.hpp"
 #include <cmath>
 #include<iostream>
 
@@ -31,6 +32,8 @@ void handleKeyboard(unsigned char key, int x, int y) {
         case 'l': yRotation += 0.25f; break;
         case 'o': zRotation -= 0.25f; break;
         case 'u': zRotation += 0.25f; break;
+        case 'p': saveFrameAsPNG("output.png");break;
+
         case 27: exit(0); break;
     }
     glutPostRedisplay();
@@ -54,9 +57,9 @@ void handleMouseMotion(int x, int y) {
 
 // Mouse scroll handler
 void handleMouseScroll(int button, int dir, int x, int y) {
-    if (button == 3) { // Scroll up
+    if (button == 3) { // Scroll in
     	zTranslate += 0.1f;
-    } else if (button == 4) { // Scroll down
+    } else if (button == 4) { // Scroll out
     	zTranslate -= 0.1f;
     }
     glutPostRedisplay(); // Refresh the display
