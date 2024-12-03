@@ -51,7 +51,7 @@ void handleKeyboard(unsigned char key, int x, int y) {
 		break;
 
 	case 'i': // Isometric view
-		xRotation = 35.26f; // Approximate angle for isometric projection
+		xRotation = 35.26f;
 		yRotation = 45.0f;
 		zRotation = 0.0f;
 		break;

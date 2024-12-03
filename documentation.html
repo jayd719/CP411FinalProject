@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation CP411 Final Project</title>
+</head>
+
+<body>
+    <page size="A4" style="padding: 4%;">
+
+        <h1>Documentation: Render 3D Objects with Enhanced Controls</h1>
+
+
+
+        <h3>1. Introduction</h3>
+        <p>This project implements a real-time 3D object rendering application using OpenGL. It allows users to render
+            and
+            interact with 3D shapes like cubes, pyramids, spheres, and custom STL models. The application includes
+            features like
+            rotation, zoom, translation, dynamic lighting, and saving the object being rendered as PNG file.
+        </p>
+
+        <h3>2. Installation</h3>
+        <h4>Prerequisites</h4>
+        <ol>
+            <li>A C++ compiler supporting OpenGL and GLUT (g++ or gcc)</li>
+            <li>Windows OS</li>
+            <li>Command Line Interface like Shell,Command Prompt etc.</li>
+        </ol>
+
+        <h4>Steps</h4>
+        <ol>
+            <li>Download the zip file <a href="http://">Here</a></li>
+            <li>cd into src folder</li>
+            <li>Build on Windows using command:<br> <strong
+                    style="padding: 4px;  margin: 3%; background-color: beige; font-size: larger;">g++ Main.cpp -o
+                    render3D -lfreeglut -lComdlg32 -lopengl32 -lglu32</strong> </li>
+            <li>Run the applicaiton using : <br><strong
+                    style="padding: 4px;  margin: 3%; background-color: beige; font-size: larger;">./render3D</strong>
+            </li>
+        </ol>
+        <figure>
+            <img src="images/img1.png" width="100%" alt="sample STL object in applicaiton">
+            <figcaption>sample STL object in applicaiton</figcaption>
+        </figure>
+
+
+        <h3>Project Structure</h3>
+        <pre style="background-color: rgba(128, 128, 128, 0.329); padding: 1%;">
+            CP411/
+            ├── Binaries/
+            ├── Includes/
+            ├── src/
+            │   ├── Controller/
+            │   │   ├── controller.cpp
+            │   │   ├── controller.hpp
+            │   │   ├── menu.cpp
+            │   │   ├── menu.hpp
+            │   ├── include/
+            │   │   ├── assimp/
+            │   │   ├── stb_image_write.h
+            │   ├── config.hpp
+            │   ├── Main.cpp
+            │   ├── model_loader.cpp
+            │   ├── model_loader.hpp
+            │   ├── model.cpp
+            │   ├── model.hpp
+            │   ├── utilities.cpp
+            │   ├── utilities.hpp
+            │   ├── view.cpp
+            │   ├── view.hpp
+            ├── Debug/
+            ├── Release/
+            ├── docs/
+
+        </pre>
+
+
+        <h3>Features</h3>
+        <ul>
+            <li><strong>Predefined 3D Objects</strong>: Includes Cube, Pyramid, and Sphere, with dynamic rendering and
+                interaction.</li>
+            <li><strong>Custom Model Support</strong>: Load binary STL files for rendering custom 3D models.</li>
+            <li><strong>Standard Viewpoits:</strong> Standard viewpoints include Isometric, Reverse Isometric, Top,
+                Bottom, and Front views, offering comprehensive perspectives for clear visualization.</li>
+            <li><strong>Real-Time Interaction</strong>: Rotate, zoom, and translate objects using keyboard and mouse
+                inputs.</li>
+            <li><strong>Right-Click Menu</strong>: Access options for resetting, saving screenshots, switching shapes,
+                and exiting the application.</li>
+            <li><strong>Saving As PNG</strong>: Capture and save the current frame as a PNG file with a timestamp.
+            </li>
+            <li><strong>Responsive Design</strong>: Automatically adjust rendering based on window resizing.</li>
+            <li><strong>Extensible Architecture</strong>: Modular design for adding new shapes, features, and
+                enhancements.</li>
+        </ul>
+
+
+        <h3>Usage Guide</h3>
+        <h4>Launching the Application</h4>
+        <ol>
+            <li>Run the compiled binary to open the application window.</li>
+            <li>A cube will be rendered by default, rotating along the axes.</li>
+        </ol>
+
+        <h4>Switching Shapes</h4>
+        <ol>
+            <li>Right-click to open the context menu.</li>
+            <li>Choose between Cube, Pyramid, Sphere, or Load Custom Model.</li>
+        </ol>
+
+        <h4>Loading Custom Models</h4>
+        <ol>
+            <li>Select "Load Custom Model" from the menu.</li>
+            <li>Browse for a binary STL file using the file dialog.</li>
+            <li>The selected model will be rendered in the scene.</li>
+        </ol>
+
+
+        <h4>Saving as PNG</h4>
+        <ol>
+            <li> Select "Save As PNG" from the menu.</li>
+            <li>The current frame will be saved with a timestamped filename in the working directory.</li>
+        </ol>
+
+
+
+        <h3>Controls</h3>
+        <p>The 3D Object Rendering Application provides enhanced controls for interacting with and viewing 3D objects.
+        </p>
+        <h4>Keyboard Controls</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>+</code></td>
+                    <td>Increase rotation speed</td>
+                </tr>
+                <tr>
+                    <td><code>-</code></td>
+                    <td>Decrease rotation speed</td>
+                </tr>
+                <tr>
+                    <td>Space</td>
+                    <td>Pause/Resume rotation</td>
+                </tr>
+                <tr>
+                    <td><code>w</code></td>
+                    <td>Rotate the object upward</td>
+                </tr>
+                <tr>
+                    <td><code>s</code></td>
+                    <td>Rotate the object downward</td>
+                </tr>
+                <tr>
+                    <td><code>a</code></td>
+                    <td>Rotate the object to the left</td>
+                </tr>
+                <tr>
+                    <td><code>d</code></td>
+                    <td>Rotate the object to the right</td>
+                </tr>
+                <tr>
+                    <td><code>q</code></td>
+                    <td>Rotate the object counterclockwise along Z-axis</td>
+                </tr>
+                <tr>
+                    <td><code>e</code></td>
+                    <td>Rotate the object clockwise along Z-axis</td>
+                </tr>
+                <tr>
+                    <td><code>i</code></td>
+                    <td>Set <strong>Isometric view</strong> (35.26° X-axis, 45° Y-axis)</td>
+                </tr>
+                <tr>
+                    <td><code>r</code></td>
+                    <td>Set <strong>Reverse isometric view</strong> (-35.26° X-axis, -45° Y-axis)</td>
+                </tr>
+                <tr>
+                    <td><code>t</code></td>
+                    <td>Set <strong>Top view</strong> (-90° X-axis)</td>
+                </tr>
+                <tr>
+                    <td><code>b</code></td>
+                    <td>Set <strong>Bottom view</strong> (90° X-axis)</td>
+                </tr>
+                <tr>
+                    <td><code>f</code></td>
+                    <td>Set <strong>Front view</strong> (0° X, Y, Z axes)</td>
+                </tr>
+                <tr>
+                    <td><code>p</code></td>
+                    <td>Save the current frame as a PNG file</td>
+                </tr>
+                <tr>
+                    <td><code>Esc</code></td>
+                    <td>Exit the application</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Mouse Controls</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Horizontal Movement</strong></td>
+                    <td>Rotate the object left or right based on mouse X-axis movement.</td>
+                </tr>
+                <tr>
+                    <td><strong>Vertical Movement</strong></td>
+                    <td>Rotate the object up or down based on mouse Y-axis movement.</td>
+                </tr>
+                <tr>
+                    <td><strong>Scroll Up/Down</strong></td>
+                    <td>Zoom in/out.</td>
+                </tr>
+                <tr>
+                    <td><strong>Right-click</strong></td>
+                    <td>Open the context menu.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Mouse Options</h4>
+        <p>The <strong>right-click menu</strong> provides the following functionalities:</p>
+        <ul>
+            <li><strong>Reset</strong>: Reset all transformations to their default values.</li>
+            <li><strong>Pause/Resume</strong>: Toggle rotation.</li>
+            <li><strong>Speed</strong>: Adjust the rotation speed dynamically.</li>
+            <li><strong>Zoom</strong>: Increase or decrease the zoom level.</li>
+            <li><strong>Load Custom Model</strong>: Load and render a binary STL model.</li>
+            <li><strong>Save As PNG</strong>: Save the current frame as an image file.</li>
+            <li><strong>Exit</strong>: Close the application.</li>
+        </ul>
+
+
+
+        <h3>Dependencies</h3>
+        <ul>
+            <li><strong>OpenGL</strong>: Core graphics rendering library.</li>
+            <li><strong>GLUT</strong>: For windowing and event handling.</li>
+            <li><strong>STB Image Write</strong>: Lightweight library for saving PNG images.</li>
+        </ul>
+
+
+
+        <h3>References</h3>
+        <ol>
+            <li>OpenGL Programming Guide: <a
+                    href="https://www.opengl.org/documentation/">https://www.opengl.org/documentation/</a></li>
+            <li>FreeGLUT Documentation: <a
+                    href="https://freeglut.sourceforge.net/docs/">https://freeglut.sourceforge.net/docs/</a></li>
+            <li>STB Image Write Library: <a href="https://github.com/nothings/stb">https://github.com/nothings/stb</a>
+            </li>
+            <li>Learn OpenGL: <a href="https://learnopengl.com/">https://learnopengl.com/</a></li>
+        </ol>
+
+    </page>
+</body>
+
+</html>

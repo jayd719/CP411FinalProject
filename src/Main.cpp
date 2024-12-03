@@ -2,7 +2,7 @@
 // Project     : Render 3D Cube with Enhanced Controls
 // Author      : JD
 // Version     : 3.1
-// Run         : g++ 3dCube.cpp -o 3dCube -lfreeglut -lfreeglut -lComdlg32 -lopengl32 -lglu32
+// Run         : g++ Main.cpp -o 3dCube -lfreeglut -lComdlg32 -lopengl32 -lglu32
 // Description : Displays a rotating 3D cube with colored faces in OpenGL.
 //               Includes lighting, keyboard controls, mouse controls, and
 //               navigation in 3D space with interaction feedback.

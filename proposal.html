@@ -1,0 +1,43 @@
+<h1 id="cp411-project-3d-object-rendering-application-with-enhanced-controls">CP411 Project: 3D Object Rendering Application with Enhanced Controls</h1>
+<p>Author(s): Jashandeep Singh</p>
+<p>Date: 2024-11-19</p>
+<h2 id="introduction">Introduction</h2>
+<p>This project invloves on the development of a 3D Object Rendering Application using OpenGL. The primary objective is to build a robust interactive system for rendering and manipulating 3D objects with real-time controls. The application will support multiple object types and provide dynamic user interactions such as rotation, zoom, translation, and custom model uploads</p>
+<p>Key features of the project include:</p>
+<ul>
+<li>Support for custom 3D models in binary STL format.</li>
+<li>Real-time rendering of 3D objects</li>
+<li>Enhanced user controls via keyboard and mouse inputs.</li>
+<li>Screenshot functionality to capture the current frame.</li>
+<li>Depth-First Search (DFS).</li>
+</ul>
+<h2 id="problem-solving-and-algorithms">Problem solving and algorithms</h2>
+<p>The project aims to acts as a learning resource for understanding transformations and rendering techniques in OpenGL.</p>
+<h2 id="design-consideration">Design consideration</h2>
+<p>The system would be implemented using the Model-View-Controller (MVC) architecture to ensure modularity and scalability.</p>
+<ul>
+<li>Model:
+<ul>
+<li>Maintains data structures for objects (vertices, faces) and transformations.</li>
+<li>Supports binary STL file loading and parsing.</li>
+<li>Implements global state variables (rotation, translation, zoom).</li>
+</ul></li>
+<li>View:
+<ul>
+<li>Handles graphical rendering using OpenGL.</li>
+<li>Renders objects with dynamic lighting and perspective adjustments.</li>
+</ul></li>
+<li>Controller:
+<ul>
+<li>Acts as an intermediary between the Model and View..</li>
+<li>Processes user inputs (keyboard, mouse).</li>
+<li>Updates the state of the Model and triggers redisplay in the View.</li>
+</ul></li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><p>STB Image Write Library Sean Barrett. stb_image_write.h: Single-File Public Domain Library for Writing Images. https://github.com/nothings/stb</p></li>
+<li><p>3D File Formats: STL ISO/ASTM. Additive Manufacturing File Format (AMF) Specification. ISO/ASTM 52915:2016. https://en.wikipedia.org/wiki/STL_(file_format)</p></li>
+<li>Interactive graphics with OpenGL: Tutorials and resources for GLUT and OpenGL integration.</li>
+<li><p>FreeGLUT Documentation FreeGLUT Development Team. The FreeGLUT API Documentation. https://freeglut.sourceforge.net/docs/</p></li>
+</ul>
