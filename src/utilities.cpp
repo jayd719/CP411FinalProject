@@ -1,9 +1,8 @@
-/*
- * utilities.cpp
- *
- *  Created on: Dec 2, 2024
- *      Author: jashan
- */
+//============================================================================
+// Project     : Render 3D Cube with Enhanced Controls
+// Author      : JD
+// Version     : 3.1
+//============================================================================
 
 #include <GL/glut.h>
 #include "utilities.hpp"

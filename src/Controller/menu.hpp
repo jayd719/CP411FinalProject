@@ -1,9 +1,8 @@
-/*
- * menu.hpp
- *
- *  Created on: Dec 2, 2024
- *      Author: jashan
- */
+//============================================================================
+// Project     : Render 3D Cube with Enhanced Controls
+// Author      : JD
+// Version     : 3.1
+//============================================================================
 
 #ifndef CONTROLLER_MENU_HPP_
 #define CONTROLLER_MENU_HPP_

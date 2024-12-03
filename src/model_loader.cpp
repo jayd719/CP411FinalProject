@@ -1,3 +1,9 @@
+//============================================================================
+// Project     : Render 3D Cube with Enhanced Controls
+// Author      : JD
+// Version     : 3.1
+//============================================================================
+
 #include <fstream>
 #include <vector>
 #include <cstring>
