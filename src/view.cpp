@@ -5,7 +5,10 @@
 //============================================================================
 
 #include <GL/glut.h>
-#include <cmath>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <cstdio>
 #include "view.hpp"
 #include "model.hpp"
 #include "utilities.hpp"
@@ -27,15 +30,15 @@ extern GLfloat zRotation;
 
 extern GLfloat zoom;
 
-
-
-enum ShapeType { CUBE, PYRAMID, SPHERE,CUSTOM };
+enum ShapeType {
+	CUBE, PYRAMID, SPHERE, CUSTOM
+};
 extern ShapeType currentShape;
 
 void initializeOpenGL() {
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 	glutInitWindowSize(WIN_WIDTH, WIN_HEIGHT);
-	glutInitWindowPosition(100,50);
+	glutInitWindowPosition(100, 50);
 	glutCreateWindow(WINDOW_TITLE);
 
 	glClearColor(0.9, 0.9, 0.9, 0.0);
@@ -47,8 +50,6 @@ void initializeOpenGL() {
 			static_cast<GLfloat>(WIN_WIDTH) / static_cast<GLfloat>(WIN_HEIGHT),
 			1.0, 24.0);
 	glMatrixMode(GL_MODELVIEW);
-
-
 
 }
 
@@ -87,11 +88,16 @@ void onDisplay() {
 		drawSphere();
 		break;
 	case CUSTOM:
+		glColor3f(.5,.7,.8);
 		drawSTL();
 
 	}
 
-	renderText(2,5,"CP");
+	char info[256];
+	glColor3f(0,0,0);
+	snprintf(info, sizeof(info), "Rotation Speed: %.1f | %s", rotationSpeed,
+			isPaused ? "Paused" : "Running");
+	renderText(10, WIN_HEIGHT - 20, info);
 
 	glutSwapBuffers();
 }
@@ -115,7 +121,4 @@ void rotateShape() {
 		glutPostRedisplay();
 	}
 }
-
-
-
 

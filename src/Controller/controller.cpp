@@ -49,6 +49,32 @@ void handleKeyboard(unsigned char key, int x, int y) {
 	case 'e':
 		zRotation += RotStep;
 		break;
+
+	case 'i': // Isometric view
+		xRotation = 35.26f; // Approximate angle for isometric projection
+		yRotation = 45.0f;
+		zRotation = 0.0f;
+		break;
+	case 'r': // Reverse isometric view
+		xRotation = -35.26f;
+		yRotation = -45.0f;
+		zRotation = 0.0f;
+		break;
+	case 't': // Top view
+		xRotation = -90.0f;
+		yRotation = 0.0f;
+		zRotation = 0.0f;
+		break;
+	case 'b': // Bottom view
+		xRotation = 90.0f;
+		yRotation = 0.0f;
+		zRotation = 0.0f;
+		break;
+	case 'f': // Front view
+		xRotation = 0.0f;
+		yRotation = 0.0f;
+		zRotation = 0.0f;
+		break;
 	case 'p':
 		saveFrameAsPNG("output.png");
 		break;
