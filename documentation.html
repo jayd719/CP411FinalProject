@@ -4,98 +4,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation CP411 Final Project</title>
+    <title>Documentation - CP411 Final Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 2%;
+        }
+
+        h1, h3 {
+            color: #2c3e50;
+        }
+
+        h4 {
+            color: #34495e;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table thead th {
+            background-color: #f8f9fa;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        figcaption {
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+    </style>
 </head>
 
 <body>
-    <page size="A4" style="padding: 4%;">
-
+    <section>
         <h1>Documentation: Render 3D Objects with Enhanced Controls</h1>
 
-
-
         <h3>1. Introduction</h3>
-        <p>This project implements a real-time 3D object rendering application using OpenGL. It allows users to render
-            and
-            interact with 3D shapes like cubes, pyramids, spheres, and custom STL models. The application includes
-            features like
-            rotation, zoom, translation, dynamic lighting, and saving the object being rendered as PNG file.
+        <p>
+            This project implements a real-time 3D object rendering application using OpenGL. It allows users to render and
+            interact with 3D shapes like cubes, pyramids, spheres, and custom STL models. The application includes features
+            like rotation, zoom, translation, dynamic lighting, and saving the object being rendered as a PNG file.
         </p>
 
         <h3>2. Installation</h3>
         <h4>Prerequisites</h4>
-        <ol>
-            <li>A C++ compiler supporting OpenGL and GLUT (g++ or gcc)</li>
+        <ul>
+            <li>A C++ compiler supporting OpenGL and GLUT (e.g., g++ or gcc)</li>
             <li>Windows OS</li>
-            <li>Command Line Interface like Shell,Command Prompt etc.</li>
-        </ol>
+            <li>Command Line Interface (e.g., Command Prompt or Shell)</li>
+        </ul>
 
         <h4>Steps</h4>
         <ol>
-            <li>Download the zip file <a href="http://">Here</a></li>
-            <li>cd into src folder</li>
-            <li>Build on Windows using command:<br> <strong
-                    style="padding: 4px;  margin: 3%; background-color: beige; font-size: larger;">g++ Main.cpp -o
-                    render3D -lfreeglut -lComdlg32 -lopengl32 -lglu32</strong> </li>
-            <li>Run the applicaiton using : <br><strong
-                    style="padding: 4px;  margin: 3%; background-color: beige; font-size: larger;">./render3D</strong>
+            <li>Download the zip file <a href="#">here</a>.</li>
+            <li>Navigate to the <code>src</code> folder.</li>
+            <li>Build on Windows using the following command:<br>
+                <code>g++ Main.cpp -o render3D -lfreeglut -lComdlg32 -lopengl32 -lglu32</code>
+            </li>
+            <li>Run the application using:<br>
+                <code>./render3D</code>
             </li>
         </ol>
         <figure>
-            <img src="images/img1.png" width="100%" alt="sample STL object in applicaiton">
-            <figcaption>sample STL object in applicaiton</figcaption>
+            <img src="images/img1.png" width="100%" alt="Sample STL object in application">
+            <figcaption>Sample STL object rendered in the application</figcaption>
         </figure>
 
-
-        <h3>Project Structure</h3>
-        <pre style="background-color: rgba(128, 128, 128, 0.329); padding: 1%;">
-            CP411/
-            ├── Binaries/
-            ├── Includes/
-            ├── src/
-            │   ├── Controller/
-            │   │   ├── controller.cpp
-            │   │   ├── controller.hpp
-            │   │   ├── menu.cpp
-            │   │   ├── menu.hpp
-            │   ├── include/
-            │   │   ├── assimp/
-            │   │   ├── stb_image_write.h
-            │   ├── config.hpp
-            │   ├── Main.cpp
-            │   ├── model_loader.cpp
-            │   ├── model_loader.hpp
-            │   ├── model.cpp
-            │   ├── model.hpp
-            │   ├── utilities.cpp
-            │   ├── utilities.hpp
-            │   ├── view.cpp
-            │   ├── view.hpp
-            ├── Debug/
-            ├── Release/
-            ├── docs/
-
+        <h3>3. Project Structure</h3>
+        <pre>
+CP411/
+├── Binaries/
+├── Includes/
+├── src/
+│   ├── Controller/
+│   │   ├── controller.cpp
+│   │   ├── controller.hpp
+│   │   ├── menu.cpp
+│   │   ├── menu.hpp
+│   ├── include/
+│   │   ├── assimp/
+│   │   ├── stb_image_write.h
+│   ├── config.hpp
+│   ├── Main.cpp
+│   ├── model_loader.cpp
+│   ├── model_loader.hpp
+│   ├── model.cpp
+│   ├── model.hpp
+│   ├── utilities.cpp
+│   ├── utilities.hpp
+│   ├── view.cpp
+│   ├── view.hpp
+├── Debug/
+├── Release/
+├── docs/
         </pre>
 
-
-        <h3>Features</h3>
+        <h3>4. Features</h3>
         <ul>
-            <li><strong>Predefined 3D Objects</strong>: Includes Cube, Pyramid, and Sphere, with dynamic rendering and
-                interaction.</li>
-            <li><strong>Custom Model Support</strong>: Load binary STL files for rendering custom 3D models.</li>
-            <li><strong>Standard Viewpoits:</strong> Standard viewpoints include Isometric, Reverse Isometric, Top,
-                Bottom, and Front views, offering comprehensive perspectives for clear visualization.</li>
-            <li><strong>Real-Time Interaction</strong>: Rotate, zoom, and translate objects using keyboard and mouse
-                inputs.</li>
-            <li><strong>Right-Click Menu</strong>: Access options for resetting, saving screenshots, switching shapes,
-                and exiting the application.</li>
-            <li><strong>Saving As PNG</strong>: Capture and save the current frame as a PNG file with a timestamp.
-            </li>
-            <li><strong>Responsive Design</strong>: Automatically adjust rendering based on window resizing.</li>
-            <li><strong>Extensible Architecture</strong>: Modular design for adding new shapes, features, and
-                enhancements.</li>
+            <li><strong>Predefined 3D Objects:</strong> Includes Cube, Pyramid, and Sphere with dynamic rendering and interaction.</li>
+            <li><strong>Custom Model Support:</strong> Load binary STL files for rendering custom 3D models.</li>
+            <li><strong>Standard Viewpoints:</strong> Isometric, Reverse Isometric, Top, Bottom, and Front views.</li>
+            <li><strong>Real-Time Interaction:</strong> Rotate, zoom, and translate objects using keyboard and mouse inputs.</li>
+            <li><strong>Right-Click Menu:</strong> Access options like resetting, saving screenshots, switching shapes, and exiting.</li>
+            <li><strong>Saving As PNG:</strong> Capture and save the current frame as a PNG file with a timestamp.</li>
+            <li><strong>Responsive Design:</strong> Automatically adjusts rendering based on window resizing.</li>
+            <li><strong>Extensible Architecture:</strong> Modular design for adding new shapes and features.</li>
         </ul>
-
 
         <h3>Usage Guide</h3>
         <h4>Launching the Application</h4>
