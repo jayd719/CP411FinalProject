@@ -14,4 +14,5 @@ void handleMainMenu(int option);
 void handleSpeedSubMenu(int option);
 void handleZoomSubMenu(int option);
 void handleLightPositionMenu(int option);
+void handleSTLfile();
 #endif /* CONTROLLER_MENU_HPP_ */

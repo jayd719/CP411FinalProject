@@ -21,5 +21,5 @@ void updateColorArray(GLfloat colorArray[6][3]);
 void renderText(float x, float y, const char* text);
 void saveFrameAsPNG(const char* filename);
 void generateFileName(const char* baseName, char* fullFileName, size_t maxLength);
-
+void openFileDialog(char* buffer, size_t bufferSize);
 #endif /* UTILITIES_HPP_ */

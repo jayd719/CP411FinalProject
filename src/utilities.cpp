@@ -7,7 +7,10 @@
 
 #include <GL/glut.h>
 #include "utilities.hpp"
-
+#include <windows.h>
+#include <cstdio>
+#include <commdlg.h>
+#include <iostream>
 
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
@@ -77,10 +80,32 @@ void saveFrameAsPNG(const char* filename) {
 
 
 void generateFileName(const char* baseName, char* fullFileName, size_t maxLength) {
-	std::time_t now = std::time(NULL);
-	std::tm* localTime = std::localtime(&now);
+	time_t now = time(NULL);
+	tm* localTime = localtime(&now);
 	char timeBuffer[20];
-	std::strftime(timeBuffer, sizeof(timeBuffer), "%Y%m%d_%H%M%S", localTime);
+	strftime(timeBuffer, sizeof(timeBuffer), "%Y%m%d_%H%M%S", localTime);
 	snprintf(fullFileName, maxLength, "%s_%s" , timeBuffer,baseName);
 	renderText(20,20,"File Saved");
 }
+
+
+
+
+void openFileDialog(char* buffer, size_t bufferSize) {
+    OPENFILENAME ofn = {0}; // Zero-initialize the structure
+    ofn.lStructSize = sizeof(OPENFILENAME);
+
+    ofn.lpstrFilter = "All Files\0*.*\0\0"; // Properly formatted filter
+    ofn.lpstrFile = buffer;              // File path buffer
+    ofn.nMaxFile = bufferSize;           // Buffer size
+    ofn.Flags = OFN_FILEMUSTEXIST | OFN_HIDEREADONLY; // Flags
+
+    // Open the file dialog
+    if (!GetOpenFileName(&ofn)) {
+        DWORD error = CommDlgExtendedError();
+        if (error) {
+            fprintf(stderr, "Error opening file dialog. Code: %lu\n", error);
+        }
+    }
+}
+

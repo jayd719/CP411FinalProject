@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include "menu.hpp"
 #include "../utilities.hpp"
-
+#include "../model_loader.hpp"
 
 extern GLfloat rotationSpeed;
 extern GLfloat rotationAngle;
@@ -25,7 +25,7 @@ extern GLfloat cameraY;
 extern GLfloat cameraX;
 
 extern GLfloat zoom;
-enum ShapeType { CUBE, PYRAMID, SPHERE };
+enum ShapeType { CUBE, PYRAMID, SPHERE,CUSTOM };
 extern ShapeType currentShape;
 
 
@@ -101,7 +101,8 @@ void handleMainMenu(int option) {
         break;
 
     case 6: // load custom model
-
+    	handleSTLfile();
+    	currentShape = CUSTOM;
     	break;
     case 7: // save as png
     	saveFrameAsPNG("SaveFromMenu.png");
@@ -113,6 +114,12 @@ void handleMainMenu(int option) {
     glutPostRedisplay();
 }
 
+
+void handleSTLfile(){
+	char buffer[256] = {0};
+	openFileDialog(buffer, sizeof(buffer));
+	loadSTL(buffer);
+}
 
 
 

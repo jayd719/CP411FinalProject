@@ -9,6 +9,7 @@
 
 #include "model.hpp"
 
+
 extern GLfloat colorArray[6][3];
 
 void drawFace(GLfloat vertex1[], GLfloat vertex2[], GLfloat vertex3[],
@@ -67,5 +68,8 @@ void drawSphere() {
     glColor3fv(colorArray[0]);
     glutSolidSphere(0.5, 30, 30);
 }
+
+
+
 
 

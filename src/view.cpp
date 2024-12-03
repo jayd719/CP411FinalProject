@@ -10,6 +10,7 @@
 #include "view.hpp"
 #include "model.hpp"
 #include "utilities.hpp"
+#include "model_loader.hpp"
 
 extern GLsizei WIN_WIDTH;
 extern GLsizei WIN_HEIGHT;
@@ -29,14 +30,13 @@ extern GLfloat zoom;
 
 
 
-enum ShapeType {
-	CUBE, PYRAMID, SPHERE
-};
+enum ShapeType { CUBE, PYRAMID, SPHERE,CUSTOM };
 extern ShapeType currentShape;
 
 void initializeOpenGL() {
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 	glutInitWindowSize(WIN_WIDTH, WIN_HEIGHT);
+	glutInitWindowPosition(100,50);
 	glutCreateWindow(WINDOW_TITLE);
 
 	glClearColor(0.9, 0.9, 0.9, 0.0);
@@ -87,6 +87,9 @@ void onDisplay() {
 	case SPHERE:
 		drawSphere();
 		break;
+	case CUSTOM:
+		drawSTL();
+
 	}
 
 	renderText(2,5,"CP");
