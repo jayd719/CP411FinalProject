@@ -14,7 +14,7 @@
 
 // Window Configuration
 GLsizei WIN_WIDTH = 800, WIN_HEIGHT = 800;
-const char *WINDOW_TITLE = "Render 3D Objects with Enhanced Controls";
+const char *WINDOW_TITLE = "Render 3D Objects";
 
 // Enum for Shape Selection
 enum ShapeType { CUBE, PYRAMID, SPHERE,CUSTOM };
