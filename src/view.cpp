@@ -28,6 +28,8 @@ extern GLfloat xRotation;
 extern GLfloat yRotation;
 extern GLfloat zRotation;
 
+extern GLfloat colorArray[6][3];
+
 extern GLfloat zoom;
 
 enum ShapeType {
@@ -88,7 +90,7 @@ void onDisplay() {
 		drawSphere();
 		break;
 	case CUSTOM:
-		glColor3f(.5,.7,.8);
+		glColor3fv(colorArray[2]);
 		drawSTL();
 
 	}
