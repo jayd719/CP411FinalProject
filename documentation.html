@@ -8,117 +8,15 @@
       href="https://jayd719.github.io/staticfiles/j.png"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="https://jayd719.github.io/assets/reports/report.css">
+
     <title>Documentation - Render 3D Objects</title>
-    <style>
-      * {
-        margin: 0;
-      }
 
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        padding-left: 10%;
-        padding-right: 10%;
-        padding-bottom: 20%;
-        margin: 0;
-        background-color: #f9f9f9;
-      }
-
-      h1 {
-        font-size: 50px;
-        font-weight: bolder;
-        color: #2c3e50;
-      }
-      h2 {
-        font-size: 30px;
-        font-weight: bolder;
-        color: #2c3e50;
-      }
-      h3 {
-        font-size: x-large;
-        margin-top: 50px;
-        font-weight: bolder;
-      }
-      p {
-        margin-left: 40px;
-      }
-
-      h4 {
-        font-size: large;
-        margin-left: 40px;
-        margin-top: 12.5px;
-      }
-
-      ul,
-      ol {
-        padding-top: 2.5px;
-        padding-left: 100px;
-      }
-
-      pre {
-        margin-left: 50px;
-        background-color: #e3dfdfcb;
-        padding: 10px;
-        border-radius: 5px;
-        overflow-x: auto;
-      }
-
-      table {
-        width: 75%;
-        margin-left: 50px;
-        margin-top: 10px;
-        margin-bottom: 25px;
-        border-collapse: collapse;
-      }
-
-      th,
-      table td {
-        padding: 10px;
-        text-align: left;
-        border: 1px solid #ddd;
-      }
-
-      th {
-        background-color: #e3dfdfcb;
-      }
-
-      code {
-        font-weight: bolder;
-        color: rgb(255, 0, 102);
-        padding: 2px 4px;
-        border-radius: 3px;
-      }
-
-      figure {
-        padding-top: 25px;
-        padding-bottom: 50px;
-        padding-left: 20%;
-        padding-right: 20%;
-        text-align: center;
-      }
-
-      figcaption {
-        font-style: italic;
-        font-size: 0.9em;
-      }
-
-      a {
-        color: #008eed;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      strong {
-        color: #09141f;
-      }
-    </style>
   </head>
 
   <body>
-    <h2 style="transform: translateY(15px)">Documentation</h2>
+    <main>
+    <span style="transform: translateY(15px)">Documentation</span>
     <h1>Render 3D Objects</h1>
     <span style="font-weight: bold; color: #fc0000"
       >CP411 Computer Graphics: Final Project</span
@@ -128,7 +26,7 @@
     <div id="index" style="margin-bottom: 50px"></div>
     <hr />
 
-    <h3>1. Introduction</h3>
+    <h2>1. Introduction</h2>
     <p>
       This project is a real-time 3D object rendering application built using
       OpenGL. It provides users with the ability to visualize and interact with
@@ -138,8 +36,8 @@
       the current rendering view and save it as a high-quality PNG file.
     </p>
 
-    <h3>2. Installation</h3>
-    <h4>Prerequisites</h4>
+    <h2>2. Installation</h2>
+    <h3>Prerequisites</h3>
     <ul>
       <li>
         A C++ compiler compatible with OpenGL and GLUT (e.g., GCC or MinGW)
@@ -150,7 +48,7 @@
       </li>
     </ul>
 
-    <h4>Installation Steps</h4>
+    <h3>Installation Steps</h3>
     <ol>
       <li>
         <strong>Download the Source Files:</strong> Obtain the project files in
@@ -171,7 +69,7 @@
       </li>
     </ol>
 
-    <h4>Sample Output</h4>
+    <h3>Sample Output</h3>
     <p>
       The application launches with a rotating cube rendered by default. Below
       is a sample rendering of a custom STL object:
@@ -183,7 +81,7 @@
       <figcaption>Initial Startup Screen <code>video</code></figcaption>
     </figure>
 
-    <h3>3. Project Structure</h3>
+    <h2>3. Project Structure</h2>
     <pre>
 CP411-FinalProject/
 ├── Assets      #SAMPLE STL FILES FOR TESTING
@@ -213,7 +111,7 @@ CP411-FinalProject/
 ├── docs/
     </pre>
 
-    <h3>4. Features</h3>
+    <h2>4. Features</h2>
     <ul>
       <li>
         <strong>Predefined 3D Objects:</strong> Visualize and interact with
@@ -249,14 +147,14 @@ CP411-FinalProject/
       </li>
     </ul>
 
-    <h3>5. Usage Guide</h3>
-    <h4>Launching the Application</h4>
+    <h2>5. Usage Guide</h2>
+    <h3>Launching the Application</h3>
     <ol>
       <li>Execute the compiled binary to launch the application.</li>
       <li>A default rotating cube will be displayed.</li>
     </ol>
 
-    <h4>Switching Shapes</h4>
+    <h3>Switching Shapes</h3>
     <ol>
       <li>Right-click to open the context menu.</li>
       <li>
@@ -265,14 +163,14 @@ CP411-FinalProject/
       </li>
     </ol>
 
-    <h4>Loading Custom Models</h4>
+    <h3>Loading Custom Models</h3>
     <ol>
       <li>Select the "Load Custom Model" option from the menu.</li>
       <li>Use the file dialog to select a binary STL file.</li>
       <li>The chosen model will be rendered in the viewport.</li>
     </ol>
 
-    <h4>Saving as PNG</h4>
+    <h3>Saving as PNG</h3>
     <ol>
       <li>Select the "Save As PNG" option from the menu.</li>
       <li>
@@ -281,12 +179,12 @@ CP411-FinalProject/
       </li>
     </ol>
 
-    <h3>6. Controls</h3>
+    <h2>6. Controls</h2>
     <p>
       The 3D Object Rendering Application provides enhanced controls for
       interacting with and viewing 3D objects.
     </p>
-    <h4>Keyboard Controls</h4>
+    <h3>Keyboard Controls</h3>
     <table>
       <thead>
         <tr>
@@ -363,7 +261,7 @@ CP411-FinalProject/
       </tbody>
     </table>
 
-    <h4>Mouse Controls</h4>
+    <h3>Mouse Controls</h3>
     <table>
       <thead>
         <tr>
@@ -393,7 +291,7 @@ CP411-FinalProject/
       </tbody>
     </table>
 
-    <h4>Mouse Options</h4>
+    <h3>Mouse Options</h3>
     <p>
       The <strong>right-click menu</strong> provides the following
       functionalities:
@@ -415,13 +313,13 @@ CP411-FinalProject/
       <li><strong>Exit</strong>: Close the application.</li>
     </ul>
 
-    <h3>7. Implementation Details</h3>
+    <h2>7. Implementation Details</h2>
     <p>
       The implementation of the 3D Object Rendering Application focuses on
       modularity, maintainability, and efficiency, leveraging OpenGL for
       real-time rendering and modern C++ for backend logic
     </p>
-    <h4>Modular Architecture</h4>
+    <h3>Modular Architecture</h3>
     <p>
       The application follows the Model-View-Controller (MVC) design pattern for
       modularity:
@@ -461,7 +359,7 @@ CP411-FinalProject/
       </li>
     </ol>
 
-    <h4>Core Compenents</h4>
+    <h3>Core Compenents</h3>
     <ol>
       <li>
         OpenGL Initialization
@@ -569,7 +467,7 @@ CP411-FinalProject/
       </li>
     </ol>
 
-    <h3>8. Dependencies</h3>
+    <h2>8. Dependencies</h2>
     <table>
       <thead>
         <tr>
@@ -613,7 +511,7 @@ CP411-FinalProject/
       </tbody>
     </table>
 
-    <h3>9. Screenshots of the Application in Action</h3>
+    <h2>9. Screenshots of the Application in Action</h2>
 
     <div>
       <figure>
@@ -659,7 +557,7 @@ CP411-FinalProject/
       </figure>
     </div>
 
-    <h3>10. References</h3>
+    <h2>10. References</h2>
     <ol>
       <li>CP411 Course Notes</li>
       <li>CP411 Project Details</li>
@@ -678,6 +576,7 @@ CP411-FinalProject/
       </li>
       <li><a href="https://learnopengl.com/">Learn OpenGL</a></li>
     </ol>
-    <script src="docs/index.js"></script>
-  </body>
+    <script src="https://jayd719.github.io/assets/reports/index.js"></script>
+  </main>
+    </body>
 </html>

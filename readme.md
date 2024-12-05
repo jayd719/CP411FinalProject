@@ -1,13 +1,13 @@
-<body>
-<h2 style="transform: translateY(15px)">Documentation</h2>
+
+<span style="transform: translateY(15px)">Documentation</span>
 <h1>Render 3D Objects</h1>
 <span style="font-weight: bold; color: #fc0000">CP411 Computer Graphics: Final Project</span>
 <hr>
 <br>
-<div id="index" style="margin-bottom: 50px"><h2>Table of Contents</h2><ul style="padding: 0px; list-style: none;"><li style="margin-left: 100px;"><a href="#heading-q0hvoju2q">1. Introduction</a></li><li style="margin-left: 100px;"><a href="#heading-0eb19m0pf">2. Installation</a></li><li style="margin-left: 150px;"><a href="#heading-vaztft5xo">Prerequisites</a></li><li style="margin-left: 150px;"><a href="#heading-c8aub4ksn">Installation Steps</a></li><li style="margin-left: 150px;"><a href="#heading-c6p48bboc">Sample Output</a></li><li style="margin-left: 100px;"><a href="#heading-nnu5vxg1r">3. Project Structure</a></li><li style="margin-left: 100px;"><a href="#heading-uu7hg9l7u">4. Features</a></li><li style="margin-left: 100px;"><a href="#heading-cxxz4bhe6">5. Usage Guide</a></li><li style="margin-left: 150px;"><a href="#heading-1hzufrkt4">Launching the Application</a></li><li style="margin-left: 150px;"><a href="#heading-m6abu53ze">Switching Shapes</a></li><li style="margin-left: 150px;"><a href="#heading-ji40ipbvd">Loading Custom Models</a></li><li style="margin-left: 150px;"><a href="#heading-q4sibh69f">Saving as PNG</a></li><li style="margin-left: 100px;"><a href="#heading-tyslvus9a">6. Controls</a></li><li style="margin-left: 150px;"><a href="#heading-h20dbzod7">Keyboard Controls</a></li><li style="margin-left: 150px;"><a href="#heading-xg31amwxg">Mouse Controls</a></li><li style="margin-left: 150px;"><a href="#heading-35xb11y6n">Mouse Options</a></li><li style="margin-left: 100px;"><a href="#heading-4kc8e3973">7. Implementation Details</a></li><li style="margin-left: 150px;"><a href="#heading-safggt9lu">Modular Architecture</a></li><li style="margin-left: 150px;"><a href="#heading-navyaah7d">Core Compenents</a></li><li style="margin-left: 100px;"><a href="#heading-b0auifp4t">8. Dependencies</a></li><li style="margin-left: 100px;"><a href="#heading-s3001ihyv">9. Screenshots of the Application in Action</a></li><li style="margin-left: 100px;"><a href="#heading-svxfjopg0">10. References</a></li></ul></div>
+<div id="index" style="margin-bottom: 50px"><h3 style="margin-top:15px;">Table of Contents</h3><ul style="padding: 0px; list-style: none;"><li style="margin-left: 20px;"><a href="#91oz.-6fxliixta">1. Introduction</a></li><li style="margin-left: 20px;"><a href="#91oz.-rx8jnfunl">2. Installation</a></li><li style="margin-left: 40px;"><a href="#91oz.-80qgtegw6">Prerequisites</a></li><li style="margin-left: 40px;"><a href="#91oz.-8lafg6jd1">Installation Steps</a></li><li style="margin-left: 40px;"><a href="#91oz.-9iji5q6nz">Sample Output</a></li><li style="margin-left: 20px;"><a href="#91oz.-1rqhuqnmv">3. Project Structure</a></li><li style="margin-left: 20px;"><a href="#91oz.-nwx9ez5fc">4. Features</a></li><li style="margin-left: 20px;"><a href="#91oz.-44iku4m6u">5. Usage Guide</a></li><li style="margin-left: 40px;"><a href="#91oz.-5sykd70yl">Launching the Application</a></li><li style="margin-left: 40px;"><a href="#91oz.-huloroeoo">Switching Shapes</a></li><li style="margin-left: 40px;"><a href="#91oz.-mzgd3s885">Loading Custom Models</a></li><li style="margin-left: 40px;"><a href="#91oz.-sk7t6w8g5">Saving as PNG</a></li><li style="margin-left: 20px;"><a href="#91oz.-qx2ch7l40">6. Controls</a></li><li style="margin-left: 40px;"><a href="#91oz.-nbsobgd6b">Keyboard Controls</a></li><li style="margin-left: 40px;"><a href="#91oz.-e2lfsxy18">Mouse Controls</a></li><li style="margin-left: 40px;"><a href="#91oz.-ly1zipayi">Mouse Options</a></li><li style="margin-left: 20px;"><a href="#91oz.-pruhx7lrj">7. Implementation Details</a></li><li style="margin-left: 40px;"><a href="#91oz.-48kb8yz14">Modular Architecture</a></li><li style="margin-left: 40px;"><a href="#91oz.-l269owwq3">Core Compenents</a></li><li style="margin-left: 20px;"><a href="#91oz.-6vg48wpfh">8. Dependencies</a></li><li style="margin-left: 20px;"><a href="#91oz.-xhbnwxy79">9. Screenshots of the Application in Action</a></li><li style="margin-left: 20px;"><a href="#91oz.-0fp1wzv7i">10. References</a></li></ul></div>
 <hr>
 
-<h3 id="heading-q0hvoju2q">1. Introduction</h3>
+<h2 id="91oz.-6fxliixta">1. Introduction</h2>
 <p>
 This project is a real-time 3D object rendering application built using
 OpenGL. It provides users with the ability to visualize and interact with
@@ -17,8 +17,8 @@ accompanied by dynamic lighting effects. Additionally, users can capture
 the current rendering view and save it as a high-quality PNG file.
 </p>
 
-<h3 id="heading-0eb19m0pf">2. Installation</h3>
-<h4 id="heading-vaztft5xo">Prerequisites</h4>
+<h2 id="91oz.-rx8jnfunl">2. Installation</h2>
+<h3 id="91oz.-80qgtegw6">Prerequisites</h3>
 <ul>
 <li>
 A C++ compiler compatible with OpenGL and GLUT (e.g., GCC or MinGW)
@@ -29,7 +29,7 @@ A command-line interface (CLI) such as Command Prompt or a terminal
 </li>
 </ul>
 
-<h4 id="heading-c8aub4ksn">Installation Steps</h4>
+<h3 id="91oz.-8lafg6jd1">Installation Steps</h3>
 <ol>
 <li>
 <strong>Download the Source Files:</strong> Obtain the project files in
@@ -50,7 +50,7 @@ compile the project:
 </li>
 </ol>
 
-<h4 id="heading-c6p48bboc">Sample Output</h4>
+<h3 id="91oz.-9iji5q6nz">Sample Output</h3>
 <p>
 The application launches with a rotating cube rendered by default. Below
 is a sample rendering of a custom STL object:
@@ -62,7 +62,7 @@ is a sample rendering of a custom STL object:
 <figcaption>Initial Startup Screen <code>video</code></figcaption>
 </figure>
 
-<h3 id="heading-nnu5vxg1r">3. Project Structure</h3>
+<h2 id="91oz.-1rqhuqnmv">3. Project Structure</h2>
 <pre>CP411-FinalProject/
 ├── Assets      #SAMPLE STL FILES FOR TESTING
 ├── Binaries/
@@ -91,7 +91,7 @@ is a sample rendering of a custom STL object:
 ├── docs/
 </pre>
 
-<h3 id="heading-uu7hg9l7u">4. Features</h3>
+<h2 id="91oz.-nwx9ez5fc">4. Features</h2>
 <ul>
 <li>
 <strong>Predefined 3D Objects:</strong> Visualize and interact with
@@ -127,14 +127,14 @@ integration of additional features and shapes.
 </li>
 </ul>
 
-<h3 id="heading-cxxz4bhe6">5. Usage Guide</h3>
-<h4 id="heading-1hzufrkt4">Launching the Application</h4>
+<h2 id="91oz.-44iku4m6u">5. Usage Guide</h2>
+<h3 id="91oz.-5sykd70yl">Launching the Application</h3>
 <ol>
 <li>Execute the compiled binary to launch the application.</li>
 <li>A default rotating cube will be displayed.</li>
 </ol>
 
-<h4 id="heading-m6abu53ze">Switching Shapes</h4>
+<h3 id="91oz.-huloroeoo">Switching Shapes</h3>
 <ol>
 <li>Right-click to open the context menu.</li>
 <li>
@@ -143,14 +143,14 @@ Custom Model.
 </li>
 </ol>
 
-<h4 id="heading-ji40ipbvd">Loading Custom Models</h4>
+<h3 id="91oz.-mzgd3s885">Loading Custom Models</h3>
 <ol>
 <li>Select the "Load Custom Model" option from the menu.</li>
 <li>Use the file dialog to select a binary STL file.</li>
 <li>The chosen model will be rendered in the viewport.</li>
 </ol>
 
-<h4 id="heading-q4sibh69f">Saving as PNG</h4>
+<h3 id="91oz.-sk7t6w8g5">Saving as PNG</h3>
 <ol>
 <li>Select the "Save As PNG" option from the menu.</li>
 <li>
@@ -159,12 +159,12 @@ timestamped filename.
 </li>
 </ol>
 
-<h3 id="heading-tyslvus9a">6. Controls</h3>
+<h2 id="91oz.-qx2ch7l40">6. Controls</h2>
 <p>
 The 3D Object Rendering Application provides enhanced controls for
 interacting with and viewing 3D objects.
 </p>
-<h4 id="heading-h20dbzod7">Keyboard Controls</h4>
+<h3 id="91oz.-nbsobgd6b">Keyboard Controls</h3>
 <table>
 <thead>
 <tr>
@@ -241,7 +241,7 @@ Y-axis)
 </tbody>
 </table>
 
-<h4 id="heading-xg31amwxg">Mouse Controls</h4>
+<h3 id="91oz.-e2lfsxy18">Mouse Controls</h3>
 <table>
 <thead>
 <tr>
@@ -271,7 +271,7 @@ Rotate the object left or right based on mouse X-axis movement.
 </tbody>
 </table>
 
-<h4 id="heading-35xb11y6n">Mouse Options</h4>
+<h3 id="91oz.-ly1zipayi">Mouse Options</h3>
 <p>
 The <strong>right-click menu</strong> provides the following
 functionalities:
@@ -293,13 +293,13 @@ values.
 <li><strong>Exit</strong>: Close the application.</li>
 </ul>
 
-<h3 id="heading-4kc8e3973">7. Implementation Details</h3>
+<h2 id="91oz.-pruhx7lrj">7. Implementation Details</h2>
 <p>
 The implementation of the 3D Object Rendering Application focuses on
 modularity, maintainability, and efficiency, leveraging OpenGL for
 real-time rendering and modern C++ for backend logic
 </p>
-<h4 id="heading-safggt9lu">Modular Architecture</h4>
+<h3 id="91oz.-48kb8yz14">Modular Architecture</h3>
 <p>
 The application follows the Model-View-Controller (MVC) design pattern for
 modularity:
@@ -339,7 +339,7 @@ accordingly
 </li>
 </ol>
 
-<h4 id="heading-navyaah7d">Core Compenents</h4>
+<h3 id="91oz.-l269owwq3">Core Compenents</h3>
 <ol>
 <li>
 OpenGL Initialization
@@ -447,7 +447,7 @@ axes.
 </li>
 </ol>
 
-<h3 id="heading-b0auifp4t">8. Dependencies</h3>
+<h2 id="91oz.-6vg48wpfh">8. Dependencies</h2>
 <table>
 <thead>
 <tr>
@@ -491,7 +491,7 @@ axes.
 </tbody>
 </table>
 
-<h3 id="heading-s3001ihyv">9. Screenshots of the Application in Action</h3>
+<h2 id="91oz.-xhbnwxy79">9. Screenshots of the Application in Action</h2>
 
 <div>
 <figure>
@@ -537,7 +537,7 @@ Use the context menu to switch between shapes or load a custom model
 </figure>
 </div>
 
-<h3 id="heading-svxfjopg0">10. References</h3>
+<h2 id="91oz.-0fp1wzv7i">10. References</h2>
 <ol>
 <li>CP411 Course Notes</li>
 <li>CP411 Project Details</li>
@@ -552,3 +552,4 @@ Use the context menu to switch between shapes or load a custom model
 </li>
 <li><a href="https://learnopengl.com/">Learn OpenGL</a></li>
 </ol>
+
